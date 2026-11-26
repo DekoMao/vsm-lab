@@ -1,0 +1,12 @@
+import {cp,mkdir,rm,copyFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=fileURLToPath(new URL('..',import.meta.url));
+const dest=path.join(root,'dist');
+await rm(dest,{recursive:true,force:true});
+await mkdir(dest,{recursive:true});
+await cp(path.join(root,'src'),path.join(dest,'src'),{recursive:true});
+await cp(path.join(root,'public'),dest,{recursive:true});
+for(const name of ['index.html','artigo.html'])await copyFile(path.join(root,name),path.join(dest,name));
+await copyFile(path.join(root,'docs/artigo-vsm.txt'),path.join(dest,'Artigo_VSM.txt'));
+console.log('Build estático concluído em dist/. Sem dependências externas.');

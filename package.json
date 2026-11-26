@@ -1,0 +1,17 @@
+{
+  "name": "vsm-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VSM Lab: ferramenta educacional de mapeamento do fluxo de valor e artigo técnico de Wanderley Uchôa.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Wanderley Uchôa",
+  "engines": { "node": ">=22.9.0" },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "build": "node scripts/build.js",
+    "prestart": "npm run build",
+    "start": "node --env-file-if-exists=.env scripts/serve.js",
+    "check": "npm test && npm run build"
+  }
+}

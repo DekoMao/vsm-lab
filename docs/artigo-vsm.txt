@@ -1,0 +1,100 @@
+VSM na prática: onde o produto espera enquanto a fábrica trabalha?
+Por Wanderley Uchôa | Qualidade que se Aplica | Artigo extra
+
+A montagem terminou. O produto entrou na fila do teste. A equipe continua trabalhando, mas quanto tempo aquela unidade vai levar até a expedição?
+
+Um relatório por setor pode mostrar atividade sem explicar a travessia do produto. Para discutir esse caminho, proponho um exercício de Mapeamento do Fluxo de Valor, ou VSM, acompanhado de uma ferramenta gratuita: o VSM Lab.
+
+Ao concluir a leitura, você poderá organizar um primeiro mapa de uma família de produtos, registrar a origem dos dados e comparar hipóteses de estado futuro. O mapa não substitui a observação no processo. Ele ajuda a transformar a visita em perguntas e registros recuperáveis.
+
+COMECE PELA FAMÍLIA E PELA FRONTEIRA
+
+O Lean Enterprise Institute descreve o VSM como uma representação dos fluxos de materiais e informação. A sequência usual parte do estado atual e depois constrói uma condição futura desejada.
+
+Na prática proposta aqui, escolha uma família que percorra uma rota comparável. Delimite onde o mapa começa e termina. Defina o período de demanda e de tempo disponível. Registre quem informa o que produzir, em qual etapa e com qual frequência.
+
+Para profissionais de Qualidade, NPI e Dados Industriais no PIM, uma pergunta útil é: quando uma unidade fica parada, conseguimos distinguir espera por material, teste, informação ou decisão de uma não conformidade? Se a classificação não foi observada, registre a lacuna. Não atribua uma causa apenas pela posição da fila.
+
+UM EXERCÍCIO FABRIL, COM PREMISSAS EXPLÍCITAS
+
+Todos os dados a seguir são simulados e independentes das organizações citadas como referência. Não descrevem as pessoas ou os quadros das imagens que inspiraram a pauta.
+
+Considere uma família de módulos de montagem para monitores. A rota tem quatro processos sequenciais, uma unidade por ciclo e um recurso por processo. Não há paralelismo no modelo. O tempo líquido informado é 420 minutos por dia e a demanda é 360 unidades por dia.
+
+Os estoques são contados antes de cada processo, sem contar novamente a mesma unidade. O estoque de produto acabado deste exercício é zero. Quantidades de entrada e saída, refugos, retrabalho e variações de mix não foram modelados.
+
+Preparação de kits: CT 40 s/un.; PT 40 s/un.; estoque anterior 180 un.
+Montagem: CT 55 s/un.; PT 55 s/un.; estoque anterior 90 un.
+Teste funcional: CT 80 s/un.; PT 80 s/un.; estoque anterior 360 un.
+Embalagem: CT 35 s/un.; PT 35 s/un.; estoque anterior 90 un.
+
+CT e PT foram igualados apenas para simplificar este exercício. Isso não autoriza tratá-los como iguais em outros processos. Na ferramenta, os campos são independentes: CT representa o intervalo de repetição do ciclo informado; PT registra o tempo de processamento de uma unidade.
+
+QUATRO MEDIDAS QUE NÃO DEVEM SER MISTURADAS
+
+1. Takt: 420 × 60 ÷ 360 = 70 segundos por unidade.
+
+Esse é o ritmo calculado a partir do tempo líquido e da demanda do mesmo dia. No cenário, o CT de teste, 80 s/un., está acima de 70 s/un. É uma comparação a investigar sob as premissas declaradas. Não é uma medição de capacidade efetiva da linha.
+
+Não basta verificar CT: setup, disponibilidade, perdas de qualidade, recursos paralelos e variações de execução podem mudar a análise. O VSM Lab registra setup e disponibilidade como contexto e não os multiplica para produzir uma capacidade aparentemente precisa.
+
+2. Estoque total: 180 + 90 + 360 + 90 + 0 = 720 unidades.
+
+Esse total representa as quantidades registradas nas fronteiras do exercício. Antes de somar, confirme que os pontos de contagem não se sobrepõem.
+
+3. Cobertura: 720 ÷ 360 = 2 dias equivalentes de demanda.
+
+Esse resultado não significa que uma unidade esperou exatamente dois dias. A demanda é a base da divisão; não foi medido o tempo de atravessamento de uma peça. Variações de produção, mix, sequência, paradas e entradas podem afastar a cobertura do tempo real de espera.
+
+4. Processamento: 40 + 55 + 80 + 35 = 210 segundos por unidade.
+
+São 3,5 minutos de processamento no roteiro simplificado. Não é o lead time total. Também não é, automaticamente, tempo de valor agregado: a classificação de valor exige analisar o trabalho e o que ele entrega ao cliente.
+
+No exemplo, o lead time observado fica como “não informado”. Para preenchê-lo, defina a mesma fronteira e acompanhe o intervalo de uma unidade entre a entrada e a saída. Não some minutos decorridos com dias equivalentes de demanda para fabricar um indicador de precisão que a coleta não sustenta.
+
+COMO EXPERIMENTAR NO VSM LAB
+
+Acesse a ferramenta:
+https://vsm-lab-qualidade-que-se-aplica.rednote512.chatgpt.site/
+
+Abra o exemplo simulado e percorra três áreas: a programação na parte superior, a sequência de materiais no centro e a linha de cobertura/processamento abaixo. As ligações de informação são esquemáticas. Setas contínuas indicam sequência de material, sem declarar que existe fluxo puxado.
+
+Nos dados de processo, altere uma quantidade de estoque e confira a cobertura. Depois altere apenas o CT de teste e observe a comparação com takt. Cada alteração responde a uma pergunta diferente. Reduzir o estoque digitado não demonstra que a operação conseguiu sustentá-lo; reduzir o CT digitado não comprova melhoria.
+
+Para montar seu exercício, informe família, tempo líquido, demanda e estoques. Em cada processo, registre CT, PT, setup, disponibilidade, origem dos dados e referência de coleta. Separe “simulado”, “coletado” e “estimado”. O rótulo “coletado” é uma declaração do usuário, não uma validação externa.
+
+A ferramenta aceita de dois a oito processos, uma rota sequencial e um estoque final. Dados numéricos ausentes ou inválidos suspendem os cálculos. Essa proteção não detecta todas as inconsistências possíveis.
+
+DE ESTADO ATUAL A HIPÓTESE DE ESTADO FUTURO
+
+Clique em “Futuro proposto” para criar uma cópia independente do atual. Nenhuma redução é aplicada automaticamente.
+
+Como exercício, reduza pela metade os quatro estoques: 90, 45, 180 e 45 unidades. O total proposto passa a 360 unidades e a cobertura calculada passa a um dia de demanda. Os CT e PT permanecem iguais. Portanto, o teste continua com 80 s/un., acima do takt de 70 s/un.
+
+O que o cálculo sustenta? Uma hipótese com menor estoque informado. O que ele não sustenta? Redução comprovada do lead time, aumento de capacidade, economia ou eliminação do atraso.
+
+Antes de propor a mudança no processo, registre a condição necessária para cada redução: forma de reposição, lote, frequência, regra de fila, critério de liberação, responsável e evidência a coletar. Escolha uma mudança controlada e confronte o resultado com a hipótese. Essas são ações propostas, não implementações realizadas.
+
+GUARDE O RACIOCÍNIO, NÃO APENAS A FIGURA
+
+Exporte o projeto JSON para preservar os dois cenários e suas premissas. Use SVG para compartilhar o mapa e CSV para levar a tabela de processos a outra análise. O CSV não contém todo o projeto. Há também impressão do relatório pelo navegador.
+
+“Salvar neste navegador” mantém uma cópia local. Não cria uma conta, banco compartilhado ou garantia de backup. Arquivos exportados podem conter os dados que você digitou: confira o conteúdo antes de compartilhar e respeite os limites de informação da sua organização.
+
+Minha proposta é simples: escolha uma família, caminhe pelo fluxo com a equipe e volte com dados cuja origem você consiga explicar. Depois use o mapa para discutir uma decisão específica, com responsável, condição de execução e evidência esperada.
+
+Qual espera do seu fluxo está registrada com tempo, origem e critério de saída — e qual ainda depende de uma impressão?
+
+LIMITES DO MATERIAL
+
+O VSM Lab é uma ferramenta educacional de escopo reduzido. Não simula filas, não balanceia a linha, não calcula OEE, capacidade efetiva, PCE ou ROI, não comprova estabilidade e não libera produto. Rotas alternativas, lotes, processos paralelos, retrabalho e múltiplas famílias exigem tratamento adicional. O estado futuro é uma proposta até ser executado e verificado.
+
+Fontes técnicas:
+Lean Enterprise Institute — Value Stream Mapping
+https://www.lean.org/lexicon-terms/value-stream-mapping/
+Lean Enterprise Institute — Takt Time
+https://www.lean.org/lexicon-terms/takt-time/
+Lean Enterprise Institute — Cycle Time
+https://www.lean.org/lexicon-terms/cycle-time/
+
+Referências conceituais consultadas em 25/11/2026. Este artigo não apresenta notícia nova nem resultados de uma implementação real. O exemplo e a ferramenta são independentes das organizações citadas.

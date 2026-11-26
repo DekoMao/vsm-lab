@@ -1,0 +1,21 @@
+O teste leva 80 segundos por unidade. O ritmo pedido pelo cliente é de 70. E há 720 unidades nos estoques do fluxo.
+
+Qual dessas informações explica o tempo até a entrega?
+
+No artigo extra “VSM na prática: onde o produto espera enquanto a fábrica trabalha?”, proponho um exercício simulado para separar takt, processamento, cobertura de estoque e lead time observado.
+
+Para experimentar, preparei o VSM Lab: uma ferramenta gratuita com mapa editável, dados por processo, estado atual e futuro proposto, além de exportação em JSON, SVG e CSV.
+
+No exemplo, 420 minutos líquidos por dia e demanda de 360 unidades resultam em takt de 70 s/un. Os estoques somam 720 unidades: cobertura de dois dias de demanda. Isso não comprova que uma peça esperou dois dias.
+
+Você pode copiar o cenário atual, mudar as hipóteses e registrar o que precisaria ser verificado no processo. O futuro proposto não é resultado obtido.
+
+A ferramenta é educacional e não calcula capacidade efetiva nem libera produto.
+
+Leia o artigo e experimente:
+https://vsm-lab-qualidade-que-se-aplica.rednote512.chatgpt.site/artigo.html
+
+#VSM #LeanManufacturing #Qualidade
+
+Fonte técnica:
+https://www.lean.org/lexicon-terms/value-stream-mapping/

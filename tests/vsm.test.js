@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {demo,calculate,validateDocument,svgMap,csvRows} from '../src/domain/vsm.js';
+let d=demo(),c=calculate(d.current);
+assert.equal(c.takt,70);assert.equal(c.wip,720);assert.equal(c.coverage,2);assert.equal(c.pt,210);assert.deepEqual(c.ctAbove,[2]);
+d.current.stages[2].ct=70;assert.deepEqual(calculate(d.current).ctAbove,[]);
+d.current.demand=0;assert.ok(calculate(d.current).errors.length);d=demo();
+d.current.stages[0].pt=null;assert.ok(calculate(d.current).errors.length);d=demo();
+d.current.stages[0].wip=0;assert.equal(calculate(d.current).wip,540);d=demo();
+d.current.stages[0].wip=-1;assert.ok(calculate(d.current).errors.length);d=demo();
+d.current.stages[0].availability=101;assert.ok(calculate(d.current).errors.length);d=demo();
+d.future=structuredClone(d.current);d.future.stages.forEach(p=>p.wip/=2);assert.equal(calculate(d.future).coverage,1);assert.equal(calculate(d.current).coverage,2);
+assert.deepEqual(validateDocument(d),d);assert.throws(()=>validateDocument({version:3}));
+d=demo();d.current.stages[0].name='<script>alert(1)</script>';assert.ok(!svgMap(d.current).includes('<script>'));assert.ok(svgMap(d.current).includes('&lt;script&gt;'));
+d.current.stages[0].name='=1+2';assert.ok(csvRows(d.current).includes("'=1+2"));
+console.log('OK: exemplo, limite CT=takt, entradas inválidas, zero, independência dos cenários, importação, escape SVG e CSV.');
